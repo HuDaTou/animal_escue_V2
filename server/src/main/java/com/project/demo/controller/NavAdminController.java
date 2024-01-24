@@ -4,6 +4,7 @@ import com.project.demo.entity.NavAdmin;
 import com.project.demo.service.NavAdminService;
 
 import com.project.demo.controller.base.BaseController;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
  * (NavAdmin)表控制层
  *
  */
+@Api(tags = "导航管理")
 @RestController
 @RequestMapping("nav_admin")
 public class NavAdminController extends BaseController<NavAdmin, NavAdminService> {

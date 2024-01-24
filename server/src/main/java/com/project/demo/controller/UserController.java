@@ -9,6 +9,7 @@ import com.project.demo.service.UserGroupService;
 import com.project.demo.service.UserService;
 
 import com.project.demo.controller.base.BaseController;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -24,6 +25,7 @@ import java.util.*;
 /**
  * 用户账户：用于保存用户登录信息(User)表控制层
  */
+@Api(tags = "用户账户")
 @Slf4j
 @RestController
 @RequestMapping("user")

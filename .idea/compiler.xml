@@ -7,12 +7,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="project-spring_boot" />
+        <module name="animal_escue_V2s" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="animal_escue_V2" target="1.8" />
+      <module name="project-spring_boot" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="animal_escue_V2" options="-parameters" />
+      <module name="animal_escue_V2s" options="-parameters" />
       <module name="project-spring_boot" options="-parameters" />
     </option>
   </component>

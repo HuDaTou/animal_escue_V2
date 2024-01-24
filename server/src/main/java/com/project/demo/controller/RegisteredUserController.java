@@ -3,6 +3,7 @@ package com.project.demo.controller;
 import com.project.demo.entity.RegisteredUser;
 import com.project.demo.service.RegisteredUserService;
 import com.project.demo.controller.base.BaseController;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,8 @@ import java.util.Map;
  * 注册用户：(RegisteredUser)表控制层
  *
  */
+
+@Api(tags = "注册用户")
 @RestController
 @RequestMapping("/registered_user")
 public class RegisteredUserController extends BaseController<RegisteredUser, RegisteredUserService> {

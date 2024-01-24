@@ -3,6 +3,7 @@ package com.project.demo.controller;
 import com.project.demo.entity.AnimalRescueInformation;
 import com.project.demo.service.AnimalRescueInformationService;
 import com.project.demo.controller.base.BaseController;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,7 @@ import java.util.Map;
  * 救助动物信息：(AnimalRescueInformation)表控制层
  *
  */
+@Api(tags = "救助动物信息")
 @RestController
 @RequestMapping("/animal_rescue_information")
 public class AnimalRescueInformationController extends BaseController<AnimalRescueInformation, AnimalRescueInformationService> {

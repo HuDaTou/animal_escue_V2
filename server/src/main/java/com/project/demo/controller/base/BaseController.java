@@ -2,7 +2,9 @@ package com.project.demo.controller.base;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.project.demo.Utils.QiniuUtils;
 import com.project.demo.service.base.BaseService;
+import io.swagger.annotations.Api;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -22,6 +24,7 @@ import java.util.Map;
 
 /**
  */
+@Api(tags = "Base基础接口")
 @Slf4j
 public class BaseController<E, S extends BaseService<E>> {
 
@@ -108,32 +111,53 @@ public class BaseController<E, S extends BaseService<E>> {
     }
 
 
+//    @PostMapping("/upload")
+//    public Map<String, Object> upload(@RequestParam("file") MultipartFile file) {
+//        log.info("进入方法");
+//        if (file.isEmpty()) {
+//            return error(30000, "没有选择文件");
+//        }
+//        try {
+//            //判断有没路径，没有则创建
+//            String filePath = System.getProperty("user.dir") + "\\target\\classes\\static\\upload\\";
+//            File targetDir = new File(filePath);
+//            if (!targetDir.exists() && !targetDir.isDirectory()) {
+//                if (targetDir.mkdirs()) {
+//                    log.info("创建目录成功");
+//                } else {
+//                    log.error("创建目录失败");
+//                }
+//            }
+////            String path = ResourceUtils.getURL("classpath:").getPath() + "static/upload/";
+////            String filePath = path.replace('/', '\\').substring(1, path.length());
+//            String fileName = file.getOriginalFilename();
+//            File dest = new File(filePath + fileName);
+//            log.info("文件路径:{}", dest.getPath());
+//            log.info("文件名:{}", dest.getName());
+//            file.transferTo(dest);
+//            JSONObject jsonObject = new JSONObject();
+//            jsonObject.put("url", "/api/upload/" + fileName);
+//            return success(jsonObject);
+//        } catch (IOException e) {
+//            log.info("上传失败：{}", e.getMessage());
+//        }
+//        return error(30000, "上传失败");
+//    }
+
     @PostMapping("/upload")
-    public Map<String, Object> upload(@RequestParam("file") MultipartFile file) {
+    public Map<String ,Object> upload(@RequestParam("file") MultipartFile file) throws IOException {
         log.info("进入方法");
-        if (file.isEmpty()) {
+        try {
+        if (file.isEmpty()){
             return error(30000, "没有选择文件");
         }
-        try {
-            //判断有没路径，没有则创建
-            String filePath = System.getProperty("user.dir") + "\\target\\classes\\static\\upload\\";
-            File targetDir = new File(filePath);
-            if (!targetDir.exists() && !targetDir.isDirectory()) {
-                if (targetDir.mkdirs()) {
-                    log.info("创建目录成功");
-                } else {
-                    log.error("创建目录失败");
-                }
-            }
-//            String path = ResourceUtils.getURL("classpath:").getPath() + "static/upload/";
-//            String filePath = path.replace('/', '\\').substring(1, path.length());
-            String fileName = file.getOriginalFilename();
-            File dest = new File(filePath + fileName);
-            log.info("文件路径:{}", dest.getPath());
-            log.info("文件名:{}", dest.getName());
-            file.transferTo(dest);
+        QiniuUtils qiniuUtils = new QiniuUtils();
+        String fileName = qiniuUtils.uploadFile(file);
+        File dest = new File(fileName);
+        file.transferTo(dest);
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put("url", "/api/upload/" + fileName);
+//            jsonObject.put("s7ra0both.hn-bkt.clouddn.com/", fileName);
+            jsonObject.put("url", "s7ra0both.hn-bkt.clouddn.com/"+fileName);
             return success(jsonObject);
         } catch (IOException e) {
             log.info("上传失败：{}", e.getMessage());

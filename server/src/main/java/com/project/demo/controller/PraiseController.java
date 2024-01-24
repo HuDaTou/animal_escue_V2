@@ -4,6 +4,7 @@ import com.project.demo.entity.Praise;
 import com.project.demo.service.PraiseService;
 
 import com.project.demo.controller.base.BaseController;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
  * 点赞：(Praise)表控制层
  *
  */
+@Api(tags = "点赞")
 @RestController
 @RequestMapping("praise")
 public class PraiseController extends BaseController<Praise, PraiseService> {

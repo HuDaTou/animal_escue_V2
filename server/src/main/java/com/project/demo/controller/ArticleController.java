@@ -4,6 +4,7 @@ import com.project.demo.entity.Article;
 import com.project.demo.service.ArticleService;
 
 import com.project.demo.controller.base.BaseController;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
  * 文章：用于内容管理系统的文章(Article)表控制层
  *
  */
+@Api(tags = "文章")
 @RestController
 @RequestMapping("article")
 public class ArticleController extends BaseController<Article, ArticleService> {

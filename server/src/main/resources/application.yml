@@ -17,3 +17,14 @@ spring:
     multipart:
       max-file-size: 100MB
       max-request-size: 100MB
+#  七牛秘钥
+oss:
+  qiniu:
+    accessKey: "WVDHmXtR_hMnQh-IgxYhXQ4kfVKlaARpPwsuIuKP"
+
+    secretKey: "xJ12yLgWHweBFkSUG0SV0YLaLcum-FeyQgV-508p"
+
+    # 配置空间名称
+    bucket: "animal-escue-v2"
+    # 配置域名
+    domain: "s7ra0both.hn-bkt.clouddn.com"

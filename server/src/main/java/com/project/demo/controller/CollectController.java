@@ -4,6 +4,7 @@ import com.project.demo.entity.Collect;
 import com.project.demo.service.CollectService;
 
 import com.project.demo.controller.base.BaseController;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
  * 收藏：(Collect)表控制层
  *
  */
+@Api(tags = "收藏")
 @RestController
 @RequestMapping("collect")
 public class CollectController extends BaseController<Collect, CollectService> {
