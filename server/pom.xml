@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.project.demo</groupId>
-    <artifactId>project-spring_boot</artifactId>
+    <artifactId>animal_escue_V2</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <parent>
