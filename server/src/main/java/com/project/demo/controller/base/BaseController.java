@@ -157,7 +157,7 @@ public class BaseController<E, S extends BaseService<E>> {
         file.transferTo(dest);
             JSONObject jsonObject = new JSONObject();
 //            jsonObject.put("s7ra0both.hn-bkt.clouddn.com/", fileName);
-            jsonObject.put("url", "s7ra0both.hn-bkt.clouddn.com/"+fileName);
+            jsonObject.put("url",fileName);
             return success(jsonObject);
         } catch (IOException e) {
             log.info("上传失败：{}", e.getMessage());

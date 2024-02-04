@@ -12,7 +12,7 @@ import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 
-var host = "http://127.0.0.1/";
+var host = "http://s7ra0both.hn-bkt.clouddn.com/";
 
 export default {
 	/**
@@ -266,18 +266,20 @@ export default {
 				 * @return {String} 新地址
 				 */
 				$fullUrl(url) {
-					var url_new = "";
-					if (url) {
-						if (url.indexOf("~/") === 0) {
-							url_new = url.replace('~/', host);
-						} else if (url.indexOf("/http://") === 0) {
-							url_new = url.replace('/http://', 'http://');
-						} else if (url.indexOf("/") === 0) {
-							url_new = url.replace('/', host);
-						} else {
-							url_new = url;
-						}
-					}
+					// var url_new = "";
+					// if (url) {
+					// 	if (url.indexOf("~/") === 0) {
+					// 		url_new = url.replace('~/', host);
+					// 	} else if (url.indexOf("/http://") === 0) {
+					// 		url_new = url.replace('/http://', 'http://');
+					// 	} else if (url.indexOf("/") === 0) {
+					// 		url_new = url.replace('/', host);
+					// 	} else {
+					// 		url_new = url;
+					// 	}
+					// }
+					let url_new = "http://s7ra0both.hn-bkt.clouddn.com/"+ url
+
 					return url_new;
 				},
 				/**
