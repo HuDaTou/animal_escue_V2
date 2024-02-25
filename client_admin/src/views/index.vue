@@ -7,14 +7,19 @@
 						<mm_label bg_color="bg_purple" icon="el-icon-user-solid" :url="url_user_count" unit="人"
 								  title="用户数量"></mm_label>
 					</el-col>
-<!--					<el-col :span="4">-->
-<!--						<mm_label bg_color="bg_green" icon="el-icon-view" :url="url_article_hits" unit="次"-->
-<!--								  title="文章浏览量"></mm_label>-->
-<!--					</el-col>-->
+					<el-col :span="4">
+						<mm_label bg_color="bg_green" icon="el-icon-view" :url="url_article_hits" unit="次"
+								  title="文章浏览量"></mm_label>
+					</el-col>
+					<el-col :span="4">
+						<mm_label bg_color="bg_green" icon="el-icon-view" :url="ual_animal_rescue" unit="只"
+								  title="动物数量"></mm_label>
+					</el-col>
 				</el-row>
 
 				<el-row>
-											</el-row>
+											
+				</el-row>
 
 
 			</div>
@@ -45,8 +50,9 @@
 				isAdmin: false,
 				recognitionType: "${model.filter.recognitionType}",
 				activeName: "third",
-																		url_user_count: "~/api/user/count?",
+				url_user_count: "~/api/user/count?",
 				url_article_hits: "~/api/article/sum?field=hits",
+				ual_animal_rescue: "~/api/animal_rescue_information/count?"
 			};
 		},
 		created() {

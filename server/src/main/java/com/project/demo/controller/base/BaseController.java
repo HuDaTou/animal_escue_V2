@@ -74,6 +74,11 @@ public class BaseController<E, S extends BaseService<E>> {
     }
 
 
+    /**
+     *
+     * @param request
+     * @return
+     */
     @RequestMapping("/get_list")
     public Map<String, Object> getList(HttpServletRequest request) {
         Map<String, Object> map = service.selectToPage(service.readQuery(request), service.readConfig(request));

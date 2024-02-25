@@ -32,7 +32,7 @@
 		</el-submenu>
 
 
-			<el-submenu index="news"
+		<el-submenu index="news"
 			v-show="$check_group(['/article/table','/article_type/table','/exam/table'])">
 			<template slot="title"><i class="el-icon-s-opportunity"></i><span>资源管理</span></template>
 
@@ -45,7 +45,9 @@
 				<!-- <span>文章类型</span> -->
 				<span>{{$page_title("/article_type/table") || "文章分类"}}</span>
 			</el-menu-item>
-								</el-submenu>
+		</el-submenu>
+
+		
 	
 
 
@@ -67,6 +69,18 @@
 			<el-menu-item v-for="(o, idx) in auth" v-show="$check_action(o.path)" :index="o.path">
 				<span>{{o.page_title}}</span>
 			</el-menu-item>
+		</el-submenu>
+
+		<el-submenu index="animal"
+			v-show="user_group == '管理员' || $check_group(['/animal_rescue_information/table','/classification_of_rescue_animals/table'])">
+			<template slot="title"><i class="el-icon-warning-outline"></i><span>宠物资源管理</span></template>
+			<el-menu-item v-show="user_group == '管理员' || $check_action('/animal_rescue_information/table')" index="/animal_rescue_information/table">
+				<span>宠物信息</span>
+			</el-menu-item>
+			<el-menu-item v-show="user_group == '管理员' || $check_action('/classification_of_rescue_animals/table')" index="/classification_of_rescue_animals/table">
+				<span>宠物种类</span>
+			</el-menu-item>
+
 		</el-submenu>
 	</el-menu>
 </template>

@@ -4,7 +4,7 @@
 			<el-row>
 				<el-col>
 					<el-form :model="form" :rules="rules" ref="form" label-width="60px" class="form">
-						<h1>流浪动物救助系统</h1>
+						<h1>捡爱后台系统</h1>
 						
 						<el-form-item label="账号" prop="account">
 							<el-input type="text" v-model="form.account" placeholder="用户名 / 手机 / 邮箱">
@@ -138,7 +138,7 @@
 		height: 100vh;
 		padding: .5rem;
 		width: 100%;
-		background: url(/img/bg.jpg) no-repeat;
+		background: url(/img/cat.jpg) no-repeat;
 		background-size: 100% 100%;
 		color: #fff;
 	}
@@ -181,7 +181,7 @@
 		background-color: rgba(255, 255, 255, 0.8);
 		z-index: -1;
 
-		background-image: url(/img/bg.jpg);
+		background-image: url(/img/cat.jpg);
 		background-position: center top;
 		background-size: cover;
 		background-attachment: fixed;

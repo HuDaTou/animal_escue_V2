@@ -8,7 +8,7 @@
 							<i :class="{'el-icon-menu' : !isCollapse,  'el-icon-s-grid': isCollapse }"></i>
 						</a>
 					</div>
-          <div class="action_center">欢迎使用流浪动物救助系统</div>
+          <div class="action_center">欢迎使用捡爱后台系统</div>
 					<div class="action_right">
 						<el-dropdown @command="handleCommand">
 							<div class="el-dropdown-link" style="margin-right: 2rem;">

@@ -14,7 +14,7 @@
 
 			<el-col :xs="24" :sm="12" :lg="8" class="el_form_item_warp">
 				<el-form-item label="标题" prop="title">
-					<el-input v-model="form.title" placeholder="请输入用户名"></el-input>
+					<el-input v-model="form.title" placeholder="请输入标题"></el-input>
 				</el-form-item>
 			</el-col>
 

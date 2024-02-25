@@ -36,7 +36,14 @@ public class AnimalRescueInformationController extends BaseController<AnimalResc
     @PostMapping("/add")
     @Transactional
     public Map<String, Object> add(HttpServletRequest request) throws IOException {
+//        将animal_no从request中读取出来
+//将animal_no作为参数传入service.readBody(request.getReader())，并将返回值赋给paramMap
+//将paramMap作为参数传入this.addMap(paramMap)，并将返回值赋给result
+//将result作为返回值返回
+        String animal_no = request.getParameter("animal_no");
         Map<String,Object> paramMap = service.readBody(request.getReader());
+        paramMap.put("animal_no",animal_no);
+
         this.addMap(paramMap);
         return success(1);
     }
